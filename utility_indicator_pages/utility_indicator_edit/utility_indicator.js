@@ -57,11 +57,6 @@ export class utility_indicator_EditPage {
                                             <label for="utility_indicator_description" class="form-label" style="font-weight: 500;">Описание</label>
                                             <textarea class="form-control" id="utility_indicator_description" rows="5" style="border: 1px solid #91bbe6; border-radius: 5px; padding: 10px;"></textarea>
                                         </div>
-                                        <div class="d-flex gap-2">
-                                            <button type="button" id="utility_indicator_cancel-btn" class="btn" style="background-color: #ff8f00; color: white; border: none; padding: 10px 30px;">
-                                                Назад
-                                            </button>
-                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -115,13 +110,6 @@ export class utility_indicator_EditPage {
         mainPage.utility_indicator_render();
     }
 
-    utility_indicator_addListeners() {
-        const cancelBtn = document.getElementById('utility_indicator_cancel-btn');
-        if (cancelBtn) {
-            cancelBtn.addEventListener('click', this.utility_indicator_goBack.bind(this));
-        }
-    }
-
     utility_indicator_render() {
         this.utility_indicator_parent.innerHTML = '';
         const html = this.utility_indicator_getHTML();
@@ -140,7 +128,5 @@ export class utility_indicator_EditPage {
         } else {
             this.utility_indicator_loadData();
         }
-        
-        this.utility_indicator_addListeners();
     }
 }
